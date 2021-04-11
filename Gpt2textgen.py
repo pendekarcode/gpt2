@@ -15,12 +15,12 @@ if not os.path.exists('checkpoint'):
 mymodel = 'mkitchen_all_stp_100'
 sess = gpt2.start_tf_sess()
 gpt2.load_gpt2(sess, run_name=mymodel)
-caritext = input("Find: ")
+gentext = input("Find: ")
 gpt2.generate(sess, 
     run_name=mymodel,
     temperature=0.9,
     length=373,
     top_k=40, 
     #top_p=0.9,
-    prefix=caritext
+    prefix=gentext
     )
